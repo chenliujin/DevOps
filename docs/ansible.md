@@ -15,3 +15,10 @@ k1
 k2
 k3
 ```
+
+---
+
+# 批量安装 vim
+```
+ansible all -m yum -a "state=present name=vim"
+```
