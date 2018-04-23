@@ -5,6 +5,8 @@
       yum: state=latest name=docker
     - name: 开机启动
       service: name=docker enabled=yes
+    - name: copy configure file
+      copy: src=./etc/docker/daemon.json dest=/etc/docker/daemon.json force=yes
     - name: 启动
       service: name=docker state=restarted
 
