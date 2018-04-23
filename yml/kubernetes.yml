@@ -1,0 +1,11 @@
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: yum source
+      copy: src=./etc/yum.repos.d/kubernetes.repo dest=/etc/yum.repos.d/kubernetes.repo force=yes 
+    - name: yum install
+      yum: name=kubeadm state=latest
+    - name: 开机启动
+      service: name=kubelet enabled=yes
+    - name: service
+      service: name=kubelet state=restarted
