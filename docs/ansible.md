@@ -22,3 +22,5 @@ k3
 ```
 ansible all -m yum -a "state=present name=vim"
 ```
+
+# 批量安装启动 docker
