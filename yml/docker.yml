@@ -1,0 +1,10 @@
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: 最新版本
+      yum: state=latest name=docker
+    - name: 开机启动
+      service: name=docker enabled=yes
+    - name: 启动
+      service: name=docker state=restarted
+
