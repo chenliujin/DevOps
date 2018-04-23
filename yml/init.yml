@@ -1,0 +1,9 @@
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: yum makecache
+      command: yum makecache
+    - name: yum update
+      command: yum update -y
+    - name: vim
+      yum: name=vim state=latest
