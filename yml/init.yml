@@ -7,3 +7,5 @@
       command: yum update -y
     - name: vim
       yum: name=vim state=latest
+    - name: screen
+      yum: name=screen state=latest
